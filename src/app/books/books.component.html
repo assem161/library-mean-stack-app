@@ -1,0 +1,21 @@
+<div class="books">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 l3 book-wrap" *ngFor=" let post of Books | paginate: { itemsPerPage: 8, currentPage: p }">
+        <div class="image-mask">
+          <a routerLink="/books/{{post._id}}"> <img [src]="post.avatar" [alt]="post.title">
+            <div class="information">
+              <p><i class="fa fa-pencil"></i> {{post.title}}</p>
+              <p class="truncate"><i class="fa fa-paper-plane"></i> {{post.describtion}}</p>
+              <p><i class="fa fa-pencil-square-o"></i> {{post.Author}}</p>
+              <p><i class="fa fa-star"></i> {{post.rating}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

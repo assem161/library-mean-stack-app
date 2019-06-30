@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="Book" class="col s12 single-book">
+      <h3><i class="fa fa-pencil"></i> {{ Book.title }}</h3>
+      <div class="image-mask">
+        <img [src]="Book.avatar" [alt]="Book.title">
+      </div>
+      <p><i class="fa fa-pencil-square-o"></i> {{ Book.Author }}</p>
+      <p><i class="fa fa-star"></i> {{ Book.rating }}</p>
+      <p><i class="fa fa-paper-plane"></i> {{ Book.describtion }}</p>
+      <button *ngIf="userIsAuthenticated && userId == Book.creator" class="btn red darken-4"
+        (click)="onDelete(Book._id)">delete</button>
+      <button *ngIf="userIsAuthenticated && userId == Book.creator" class="btn blue darken-4">
+        <a routerLink="/edit/{{Book._id}}">
+          Edit
+        </a>
+      </button>
+    </div>
+    <div class="comment-form">
+      <form (submit)="onSend(commentForm)" #commentForm="ngForm">
+        <input name="username" ngModel type="text" placeholder="الاسم " required #username="ngModel">
+        <div *ngIf="username.invalid"> فضلك ادخل الاسم</div>
+        <input name="email" ngModel type="email" placeholder="الايميل" required #email="ngModel" email>
+        <div *ngIf="email.invalid"> فضلك ادخل الايميل</div>
+        <input name="content" ngModel type="text" placeholder="التعليق" required #content="ngModel">
+        <div *ngIf="content.invalid"> فضلك ادخل التعليق</div>
+        <button class="btn green" type="submit">ابعث التعليق </button>
+      </form>
+    </div>
+    <div class="comments" *ngFor=" let comment of Comments">
+      <ul>
+        <li>
+          <div class="icon-man">
+            <i class="fa fa-user"></i>
+            <div class="text-comment">
+              <h3>{{comment.username}}</h3>
+              <p>{{comment.content}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

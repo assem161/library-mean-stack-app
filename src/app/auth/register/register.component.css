@@ -1,0 +1,21 @@
+.toggleC{
+    padding: 0;
+    margin: 0;
+}
+.toggleC li{
+    display: inline-block;
+    margin-left: 20px;
+    padding: 20px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.appear{
+    display: block;
+
+}
+
+.disappear{
+    display: none;
+
+}

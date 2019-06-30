@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <ul class="toggleC">
+      <li (click)="clickEvent()" [ngClass]="status ? 'green' : 'red'">
+        تسجيل الدخول
+      </li>
+      <li (click)="clickEvent()" [ngClass]="status ? 'red' : 'green'">
+        عضو جديد
+      </li>
+    </ul>
+
+    <!--enter of new memeber-->
+    <div [ngClass]="status ? 'disappear' : 'appear'" class="col s12 l6">
+      <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+        <div>
+          <input name="email" ngModel type="email" placeholder="الايميل" #emailIn="ngModel" required email>
+          <div *ngIf="emailIn.invalid">من فضلك ادخل الايميل الحاص بك</div>
+        </div>
+        <div>
+          <input type="password" name="password" ngModel matInput placeholder="كلمة المرور" #passwordIn="ngModel"
+            required password>
+          <div *ngIf="passwordIn.invalid">من فضللك ادخل كلمة المرور</div>
+        </div>
+        <button class="btn green" type="submit">تسجيل الدخول</button>
+      </form>
+    </div>
+
+    <!--start of new memeber-->
+
+    <div [ngClass]="status ? 'appear' : 'disappear'" class="col s12 l6">
+      <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+        <div>
+          <input name="username" ngModel type="text" placeholder="اسم المستخدام" #username="ngModel" required>
+          <div *ngIf="username.invalid">من فضلك ادخل اسم المستخدم </div>
+        </div>
+        <div>
+          <input name="email" ngModel type="email" placeholder="الايميل" #emailInput="ngModel" required email>
+          <div *ngIf="emailInput.invalid">من فضلك ادخل الايميل الخاص بك</div>
+        </div>
+        <div>
+          <input type="password" name="password" ngModel matInput placeholder="كلمة المرور" #passwordInput="ngModel"
+            required>
+          <div *ngIf="passwordInput.invalid">من فضللك ادخل كلمة المرور</div>
+        </div>
+        <button class="btn green" type="submit">اشترك</button>
+      </form>
+    </div>
+  </div>
+</div>

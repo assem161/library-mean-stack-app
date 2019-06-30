@@ -1,1 +1,23 @@
+
 /* You can add global styles to this file, and also import other style files */
+body{
+    height: 100vh;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.row .col{
+        float: right;
+}
+
+.fa-star{
+    color: yellow;
+}
+.fa-pencil-square-o{
+    color: blue;
+}
+.fa-pencil{
+    color: black;
+}
+.fa-paper-plane{
+    color: green;
+}

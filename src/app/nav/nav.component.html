@@ -1,0 +1,32 @@
+<nav>
+  <div class="nav-wrapper">
+    <a *ngIf="!userIsAuthenticated" routerLink="/Register" class="brand-logo">تسجيل الدخول</a>
+    <a *ngIf="userIsAuthenticated" class="brand-logo" (click)="onLogout()">تسجيل الخروج</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/books" routerLinkActive="active-menu">الصفحة الرئسية</a></li>
+      <li><a routerLink="/books" routerLinkActive="active-menu">المكتبية</a></li>
+      <li><a *ngIf="userIsAuthenticated" class="create" routerLink="/create" routerLinkActive="active-menu">اضافة
+          كتاب</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul id="slide-out" class="sidenav right-align">
+  <li>
+    <div class=" user-view">
+      <div class="background">
+        <img src="assets/images/office.png">
+      </div>
+      <a href="#user"><img class="circle" src="assets/images/guy.jpg"></a>
+      <a href="#name"><span class="white-text name">John Doe</span></a>
+      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div>
+  </li>
+  <li><a routerLink="/books" routerLinkActive="active-menu">الصفحة الرئسية</a></li>
+  <li><a routerLink="/books" routerLinkActive="active-menu">المكتبة</a></li>
+
+</ul>
+
+<div href="#" data-target="slide-out" class="sidenav-trigger">
+  <div class="pone"></div>
+</div>

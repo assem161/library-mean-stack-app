@@ -1,0 +1,77 @@
+nav{
+    background:transparent;
+    box-shadow: none;
+}
+.nav-wrapper ul li{
+    float: right;
+}
+.sidenav{
+    background: #dbc6a6;
+    float: right;
+}
+/*
+.active-menu{
+    background: #000;
+}*/
+.background img{
+    width: 100%;
+    height: 100%;
+}
+
+.sidenav .user-view .circle{
+    text-align: right;
+    display: inline-block;
+    height: 75px;
+    width: 75px;
+}
+.sidenav-trigger{
+    height: 60px;
+    cursor: pointer;
+    float: right;
+}
+.pone{
+    position: relative;
+    background:#FFF;
+    width: 40px;
+    height: 3px;
+    display: block;
+}
+.pone:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    top: 10px;
+}
+.pone:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    top: 20px;
+}
+
+@media only screen and (min-width: 992px){
+    .pone {
+        display: none;
+    }
+}
+
+
+.brand-logo{
+    left: 0px;
+    background: #039be5;
+    padding: 0px 22px;
+    font-size: 1rem;
+}
+
+/* change brand logo postion to left */
+@media only screen and (max-width: 993px){
+    .brand-logo{
+        position: absolute;
+        top: 35px;
+        left: 57px;
+    }
+}
